@@ -73,23 +73,29 @@
         button:hover, .song-btn:hover { background: #ff4757; }
         .hidden { display: none; }
         
-        /* تنسيق الفيديو والصور والإسكرينات */
+        /* تعديل تنسيق الفيديو والصور والإسكرينات للوضوح التام */
         .media-box {
             margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
         .media-box video, .media-box img {
             width: 100%;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 12px;
-            object-fit: cover;
+            background: #fff;
         }
         .media-box video {
             max-height: 350px;
+            object-fit: contain;
         }
         .media-box img {
             height: auto;
-            max-height: 450px;
+            max-width: 100%;
+            object-fit: contain;
+            image-rendering: -webkit-optimize-contrast;
+            display: block;
         }
 
         .heart {
@@ -132,7 +138,7 @@
         
         <div class="counter">
             حمودي حبيب مريوم 💖<br>
-            <span style="font-size: 15px; color: #ff4757;">من كتر حبي فيك عملت ويب سايت لينا ولذكرايتنا 😂😂♥️</span>
+            <span style="font-size: 15px; color: #ff4757;">عشان تعرف أن حبيبتك مبرمجة قد الدنيا وطلع عيني ومن كتر حبي فيك عملت ويب سايت لينا  ولذكرايتنا 😂😂♥️</span>
         </div>
 
         <!-- 🎬 قسم الفيديوهات -->
@@ -211,4 +217,4 @@
         }, 300);
     </script>
 </body>
-              </html>
+</html>
