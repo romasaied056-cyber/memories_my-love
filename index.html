@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حمودي ومريومه🫂♥️</title>
+    <link rel="manifest" href="manifest.json">
     <style>
         * {
             box-sizing: border-box;
@@ -98,7 +99,7 @@
         }
         .key:hover { background: rgba(255, 77, 109, 0.4); transform: scale(1.05); }
 
-        /* 🎵 تصميم اليوتيوب والاسطوانة (زي الفيديو تماماً) */
+        /* 🎵 تصميم اليوتيوب والاسطوانة */
         .youtube-card {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 182, 193, 0.4);
@@ -210,7 +211,7 @@
             color: #fff0f3;
         }
 
-        /* 🎬 تصميم الفيديوهات */
+        /* 🎬 تصميم الفيديوهات المحسّن للابتوب والموبايل */
         .video-card {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -225,6 +226,7 @@
             border-radius: 15px;
             object-fit: contain;
             background: #000;
+            outline: none;
         }
         .video-card p {
             font-size: 14px;
@@ -251,7 +253,7 @@
 </head>
 <body>
 
-    <!-- 🔐 شاشة القفل بـ Keypad تفاعلية -->
+    <!-- 🔐 شاشة القفل -->
     <div class="container" id="lockScreen">
         <h1>🔒 Enter a passcode</h1>
         <p>اكتب الباسورد (وعشان اسهلها عليك نا عملاه باسورد فوني😂)) 🥹♥️</p>
@@ -283,14 +285,14 @@
                 <div class="key" onclick="backspace()" style="font-size: 14px;">⌫</div>
             </div>
         </div>
-        <p id="errorMsg" style="color: #ff758f; margin-top: 15px; font-size: 14px;" class="hidden"> الباسورد غلط ياعم انت ما تركز شويه الله🙄😂♥️</p>
+        <p id="errorMsg" style="color: #ff758f; margin-top: 15px; font-size: 14px;" class="hidden">الباسورد غلط ياعم انت ما تركز شويه الله🙄😂♥️</p>
     </div>
 
     <!-- 🌟 المحتوى بعد فتح الهدية -->
     <div class="container hidden" id="mainContent">
         <h1>أن شاء الله نملاه فيديوهات كتير لينا وذكريات كتير ونبطل نتخانق ونفضل مع بعض بقا 🥹♥️😂</h1>
         
-        <!-- 🎵 أغنية اليوتيوب المدمجة مع الاسطوانة وفيديو مشغل يوتيوب -->
+        <!-- 🎵 أغنية اليوتيوب -->
         <div class="youtube-card">
             <div class="youtube-top">
                 <div class="vinyl-disc"></div>
@@ -300,7 +302,6 @@
                 </div>
             </div>
             <div class="video-frame-box">
-                <!-- الـ iframe دا محطوط جواه رابط الأغنية الجديدة مع تفعيل التشغيل التلقائي فور فتح الباسورد -->
                 <iframe id="youtubePlayer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
@@ -318,41 +319,41 @@
         </div>
         <p style="font-size: 13px; color: #ffb3c1;">عشان تعرف أن حبيبتك مبرمجة قد الدنيا عملت ويب سايت لينا ولذكرايتنا 😂 🙈 ❤️</p>
 
-        <!-- 🎬 قسم الفيديوهات -->
+        <!-- 🎬 قسم الفيديوهات (محدث بـ preload وتأكيد التحميل للابتوب) -->
         <div class="caption">Special Videos 🎬♥️</div>
         
         <div class="video-card">
-            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/ide2mq.mp4" type="video/mp4"></video>
+            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/ide2mq.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
             <p>أول لحظة وثقناها سوا اول ما عرفنا بعض يولا اول خروجه واول مره شوفنا بعض فيها 🥹♥️♥️🫂</p>
         </div>
 
         <div class="video-card">
-            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/hccx3d.mp4" type="video/mp4"></video>
+            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/hccx3d.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
             <p>مش عارفه اقول ايه هنا بس بحبك يعم😂♥️</p>
         </div>
 
         <div class="video-card">
-            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/im3pjh.mp4" type="video/mp4"></video>
+            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/im3pjh.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
             <p>الفيديو الي هنوريه ل ولادنا ف المستقبل أن شاء الله 😂😂♥️</p>
         </div>
 
         <div class="video-card">
-            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/92ee1b.mp4" type="video/mp4"></video>
+            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/92ee1b.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
             <p>بحبك موووووووووت يولا ي حمودي ي حبيبي 🥹♥️</p>
         </div>
 
         <div class="video-card">
-            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/j34vlk.mp4" type="video/mp4"></video>
+            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/j34vlk.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
             <p>يارب نفضل سوا ل اخر العمر 🫂♥️</p>
         </div>
 
         <div class="video-card">
-            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/ttnhke.mp4" type="video/mp4"></video>
+            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/ttnhke.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
             <p>الماتش الي خسرناه 😂</p>
         </div>
 
         <div class="video-card">
-            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/xf2j5n.mp4" type="video/mp4"></video>
+            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/xf2j5n.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
             <p>ربنا يديمك في حياتي يا أجمل حاجة حصلتلي 🥹🫂</p>
         </div>
 
@@ -399,8 +400,13 @@
                 document.getElementById('lockScreen').classList.add('hidden');
                 document.getElementById('mainContent').classList.remove('hidden');
                 
-                // تشغيل أغنية يوتيوب تلقائياً في الإطار أول ما يفتح الهدية
+                // تشغيل الأغنية
                 document.getElementById('youtubePlayer').src = "https://www.youtube.com/embed/2a4t3hqWngw?autoplay=1&loop=1&playlist=2a4t3hqWngw";
+
+                // أمر إضافي لضمان تحميل وتشغيل الفيديوهات على المتصفحات المختلفة للابتوب
+                document.querySelectorAll('video').forEach(video => {
+                    video.load();
+                });
 
                 startTimer();
                 typeWriter();
@@ -451,4 +457,4 @@
         }, 250);
     </script>
 </body>
-    </html>
+</html>
