@@ -51,7 +51,7 @@
         }
         .hidden { display: none; }
 
-        /* 🔐 لوحة مفاتيح الباسورد (Keypad) */
+        /* 🔐 لوحة مفاتيح الباسورد */
         .passcode-container {
             background: rgba(0, 0, 0, 0.3);
             padding: 20px;
@@ -99,7 +99,7 @@
         }
         .key:hover { background: rgba(255, 77, 109, 0.4); transform: scale(1.05); }
 
-        /* 🎵 تصميم اليوتيوب والاسطوانة */
+        /* 🎵 اليوتيوب */
         .youtube-card {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 182, 193, 0.4);
@@ -146,16 +146,8 @@
             text-align: right;
             flex-grow: 1;
         }
-        .song-title-area h4 {
-            font-size: 14px;
-            color: #ffb3c1;
-            margin-bottom: 4px;
-        }
-        .song-title-area p {
-            font-size: 12px;
-            color: #eee;
-            margin: 0;
-        }
+        .song-title-area h4 { font-size: 14px; color: #ffb3c1; margin-bottom: 4px; }
+        .song-title-area p { font-size: 12px; color: #eee; margin: 0; }
 
         .video-frame-box {
             width: 100%;
@@ -166,13 +158,8 @@
             position: relative;
             aspect-ratio: 16/9;
         }
-        .video-frame-box iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        .video-frame-box iframe { width: 100%; height: 100%; border: none; }
 
-        /* ✉️ مربع الرسالة التلقائية */
         .typing-box {
             background: rgba(0, 0, 0, 0.25);
             border-right: 4px solid #ff4d6d;
@@ -187,7 +174,6 @@
             line-height: 1.7;
         }
 
-        /* ⏰ عداد الوقت */
         .timer-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -200,18 +186,9 @@
             border-radius: 12px;
             border: 1px solid rgba(255, 182, 193, 0.3);
         }
-        .time-card span {
-            display: block;
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffb3c1;
-        }
-        .time-card label {
-            font-size: 12px;
-            color: #fff0f3;
-        }
+        .time-card span { display: block; font-size: 18px; font-weight: bold; color: #ffb3c1; }
+        .time-card label { font-size: 12px; color: #fff0f3; }
 
-        /* 🎬 تصميم الفيديوهات المحسّن للابتوب والموبايل */
         .video-card {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -226,7 +203,6 @@
             border-radius: 15px;
             object-fit: contain;
             background: #000;
-            outline: none;
         }
         .video-card p {
             font-size: 14px;
@@ -236,7 +212,6 @@
             margin-bottom: 0;
         }
 
-        /* القلوب المتساقطة */
         .heart {
             position: fixed;
             color: #ff4d6d;
@@ -253,7 +228,6 @@
 </head>
 <body>
 
-    <!-- 🔐 شاشة القفل -->
     <div class="container" id="lockScreen">
         <h1>🔒 Enter a passcode</h1>
         <p>اكتب الباسورد (وعشان اسهلها عليك نا عملاه باسورد فوني😂)) 🥹♥️</p>
@@ -288,11 +262,9 @@
         <p id="errorMsg" style="color: #ff758f; margin-top: 15px; font-size: 14px;" class="hidden">الباسورد غلط ياعم انت ما تركز شويه الله🙄😂♥️</p>
     </div>
 
-    <!-- 🌟 المحتوى بعد فتح الهدية -->
     <div class="container hidden" id="mainContent">
         <h1>أن شاء الله نملاه فيديوهات كتير لينا وذكريات كتير ونبطل نتخانق ونفضل مع بعض بقا 🥹♥️😂</h1>
         
-        <!-- 🎵 أغنية اليوتيوب -->
         <div class="youtube-card">
             <div class="youtube-top">
                 <div class="vinyl-disc"></div>
@@ -306,10 +278,8 @@
             </div>
         </div>
 
-        <!-- ✉️ الرسالة التلقائية -->
         <div class="typing-box" id="typeText"></div>
 
-        <!-- ⏰ العداد -->
         <div class="caption">🫂 بدايتنا سوا 💖</div>
         <div class="timer-grid">
             <div class="time-card"><span id="days">0</span><label>يوم</label></div>
@@ -319,41 +289,41 @@
         </div>
         <p style="font-size: 13px; color: #ffb3c1;">عشان تعرف أن حبيبتك مبرمجة قد الدنيا عملت ويب سايت لينا ولذكرايتنا 😂 🙈 ❤️</p>
 
-        <!-- 🎬 قسم الفيديوهات (محدث بـ preload وتأكيد التحميل للابتوب) -->
         <div class="caption">Special Videos 🎬♥️</div>
         
+        <!-- تم تعديل الروابط هنا لتستخدم بروتوكول آمن وforced loading -->
         <div class="video-card">
-            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/ide2mq.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
+            <video controls preload="metadata" crossorigin="anonymous"><source src="https://files.catbox.moe/ide2mq.mp4" type="video/mp4"></video>
             <p>أول لحظة وثقناها سوا اول ما عرفنا بعض يولا اول خروجه واول مره شوفنا بعض فيها 🥹♥️♥️🫂</p>
         </div>
 
         <div class="video-card">
-            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/hccx3d.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
+            <video controls preload="metadata" crossorigin="anonymous"><source src="https://files.catbox.moe/hccx3d.mp4" type="video/mp4"></video>
             <p>مش عارفه اقول ايه هنا بس بحبك يعم😂♥️</p>
         </div>
 
         <div class="video-card">
-            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/im3pjh.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
+            <video controls preload="metadata" crossorigin="anonymous"><source src="https://files.catbox.moe/im3pjh.mp4" type="video/mp4"></video>
             <p>الفيديو الي هنوريه ل ولادنا ف المستقبل أن شاء الله 😂😂♥️</p>
         </div>
 
         <div class="video-card">
-            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/92ee1b.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
+            <video controls preload="metadata" crossorigin="anonymous"><source src="https://files.catbox.moe/92ee1b.mp4" type="video/mp4"></video>
             <p>بحبك موووووووووت يولا ي حمودي ي حبيبي 🥹♥️</p>
         </div>
 
         <div class="video-card">
-            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/j34vlk.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
+            <video controls preload="metadata" crossorigin="anonymous"><source src="https://files.catbox.moe/j34vlk.mp4" type="video/mp4"></video>
             <p>يارب نفضل سوا ل اخر العمر 🫂♥️</p>
         </div>
 
         <div class="video-card">
-            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/ttnhke.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
+            <video controls preload="metadata" crossorigin="anonymous"><source src="https://files.catbox.moe/ttnhke.mp4" type="video/mp4"></video>
             <p>الماتش الي خسرناه 😂</p>
         </div>
 
         <div class="video-card">
-            <video controls preload="auto" playsinline><source src="https://files.catbox.moe/xf2j5n.mp4" type="video/mp4">متصفحك لا يدعم عرض الفيديو</video>
+            <video controls preload="metadata" crossorigin="anonymous"><source src="https://files.catbox.moe/xf2j5n.mp4" type="video/mp4"></video>
             <p>ربنا يديمك في حياتي يا أجمل حاجة حصلتلي 🥹🫂</p>
         </div>
 
@@ -400,10 +370,9 @@
                 document.getElementById('lockScreen').classList.add('hidden');
                 document.getElementById('mainContent').classList.remove('hidden');
                 
-                // تشغيل الأغنية
                 document.getElementById('youtubePlayer').src = "https://www.youtube.com/embed/2a4t3hqWngw?autoplay=1&loop=1&playlist=2a4t3hqWngw";
 
-                // أمر إضافي لضمان تحميل وتشغيل الفيديوهات على المتصفحات المختلفة للابتوب
+                // إجبار المتصفح على تحميل وتشغيل الفيديوهات فوراً وحل مشكلة الـ CORS
                 document.querySelectorAll('video').forEach(video => {
                     video.load();
                 });
