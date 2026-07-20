@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حمودي ومريومه🫂♥️</title>
+    <title>حمودي ومريومه 🫂♥️</title>
     <link rel="manifest" href="manifest.json">
     <style>
         * {
@@ -13,7 +13,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background: linear-gradient(180deg, #500612, #80091d, #30020a);
+            background: linear-gradient(180deg, #3d1c48, #5c2670, #271030);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -35,21 +35,21 @@
             position: relative;
             z-index: 10;
         }
-        h1 { font-size: 20px; margin-bottom: 15px; color: #ffb3c1; text-shadow: 0 2px 4px rgba(0,0,0,0.3); line-height: 1.5; }
-        p { font-size: 15px; margin-bottom: 15px; line-height: 1.6; color: #fff0f3; }
+        h1 { font-size: 20px; margin-bottom: 15px; color: #f3c6ff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); line-height: 1.5; }
+        p { font-size: 15px; margin-bottom: 15px; line-height: 1.6; color: #f8e7ff; }
         
         .caption {
             font-size: 15px;
             color: #ffffff;
             font-weight: bold;
-            background: rgba(255, 182, 193, 0.2);
+            background: rgba(214, 153, 255, 0.2);
             padding: 12px;
             border-radius: 15px;
             margin: 18px 0;
             line-height: 1.5;
-            border: 1px solid rgba(255, 182, 193, 0.3);
+            border: 1px solid rgba(214, 153, 255, 0.3);
         }
-        .hidden { display: none; }
+        .hidden { display: none !important; }
 
         /* 🔐 لوحة مفاتيح الباسورد */
         .passcode-container {
@@ -68,13 +68,13 @@
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            border: 2px solid #ff4d6d;
+            border: 2px solid #b366ff;
             background: transparent;
             transition: 0.3s;
         }
         .dot.active {
-            background: #ff4d6d;
-            box-shadow: 0 0 10px #ff4d6d;
+            background: #b366ff;
+            box-shadow: 0 0 10px #b366ff;
         }
         .keypad {
             display: grid;
@@ -97,12 +97,75 @@
             align-items: center;
             transition: 0.2s;
         }
-        .key:hover { background: rgba(255, 77, 109, 0.4); transform: scale(1.05); }
+        .key:hover { background: rgba(179, 102, 255, 0.4); transform: scale(1.05); }
 
-        /* 🎵 اليوتيوب */
+        /* 🧩 أزرار الكويز */
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 12px 15px;
+            border-radius: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            text-align: right;
+            font-size: 15px;
+            color: #fff;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .quiz-option:hover {
+            background: rgba(179, 102, 255, 0.3);
+            border-color: #b366ff;
+        }
+
+        /* 🪟 المودال أو الـ Popup الغضبان */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        .modal-box {
+            background: #fff;
+            color: #333;
+            padding: 30px 20px;
+            border-radius: 25px;
+            width: 85%;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            animation: popIn 0.3s ease;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .modal-box h3 { font-size: 18px; color: #4a154b; margin: 15px 0; line-height: 1.5; }
+        .modal-btn {
+            background: #5c2670;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        /* 🎵 اليوتيوب والأغنية */
         .youtube-card {
             background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 182, 193, 0.4);
+            border: 1px solid rgba(214, 153, 255, 0.4);
             border-radius: 20px;
             padding: 15px;
             margin: 20px 0;
@@ -124,7 +187,7 @@
             height: 55px;
             background: #111;
             border-radius: 50%;
-            border: 3px solid #ff4d6d;
+            border: 3px solid #b366ff;
             position: relative;
             animation: spin 3s linear infinite;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -137,7 +200,7 @@
             left: 17px;
             width: 13px;
             height: 13px;
-            background: #ffb3c1;
+            background: #f3c6ff;
             border-radius: 50%;
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
@@ -146,7 +209,7 @@
             text-align: right;
             flex-grow: 1;
         }
-        .song-title-area h4 { font-size: 14px; color: #ffb3c1; margin-bottom: 4px; }
+        .song-title-area h4 { font-size: 14px; color: #f3c6ff; margin-bottom: 4px; }
         .song-title-area p { font-size: 12px; color: #eee; margin: 0; }
 
         .video-frame-box {
@@ -162,16 +225,16 @@
 
         .typing-box {
             background: rgba(0, 0, 0, 0.25);
-            border-right: 4px solid #ff4d6d;
-            padding: 15px;
+            border-right: 4px solid #b366ff;
+            padding: 18px;
             border-radius: 15px;
-            font-size: 15px;
-            font-weight: 500;
-            color: #ffe6e8;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffe6ff;
             margin-bottom: 20px;
-            min-height: 80px;
+            min-height: 90px;
             text-align: right;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .timer-grid {
@@ -184,10 +247,10 @@
             background: rgba(255, 255, 255, 0.15);
             padding: 10px 5px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 182, 193, 0.3);
+            border: 1px solid rgba(214, 153, 255, 0.3);
         }
-        .time-card span { display: block; font-size: 18px; font-weight: bold; color: #ffb3c1; }
-        .time-card label { font-size: 12px; color: #fff0f3; }
+        .time-card span { display: block; font-size: 18px; font-weight: bold; color: #f3c6ff; }
+        .time-card label { font-size: 12px; color: #f8e7ff; }
 
         .video-card {
             background: rgba(255, 255, 255, 0.1);
@@ -206,15 +269,31 @@
         }
         .video-card p {
             font-size: 14px;
-            color: #ffb3c1;
+            color: #f3c6ff;
             font-weight: bold;
             margin-top: 10px;
             margin-bottom: 0;
         }
 
+        .next-btn {
+            background: #b366ff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(179, 102, 255, 0.4);
+            margin-top: 15px;
+            transition: 0.2s;
+            width: 100%;
+        }
+        .next-btn:hover { background: #9933ff; transform: scale(1.02); }
+
         .heart {
             position: fixed;
-            color: #ff4d6d;
+            color: #b366ff;
             font-size: 22px;
             animation: float 4s linear infinite;
             z-index: 1;
@@ -228,6 +307,7 @@
 </head>
 <body>
 
+    <!-- 1. شاشة الباسورد -->
     <div class="container" id="lockScreen">
         <h1>🔒 Enter a passcode</h1>
         <p>اكتب الباسورد (وعشان اسهلها عليك نا عملاه باسورد فوني😂)) 🥹♥️</p>
@@ -259,17 +339,62 @@
                 <div class="key" onclick="backspace()" style="font-size: 14px;">⌫</div>
             </div>
         </div>
-        <p id="errorMsg" style="color: #ff758f; margin-top: 15px; font-size: 14px;" class="hidden">الباسورد غلط ياعم انت ما تركز شويه الله🙄😂♥️</p>
+        <p id="errorMsg" style="color: #ff99bb; margin-top: 15px; font-size: 14px;" class="hidden">الباسورد غلط ياعم انت ما تركز شويه الله🙄😂♥️</p>
     </div>
 
+    <!-- 2. صفحة الكويز الأول -->
+    <div class="container hidden" id="quizPage1">
+        <h1>Quick Quiz for hamody</h1>
+        <p>جاوب صح عشان تعرف تعدي</p>
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.3); margin: 15px 0;">
+        <p style="font-weight: bold; color: #f3c6ff;">السؤال الأول</p>
+        <p style="font-size: 17px; margin-bottom: 20px;">بتتحب ايه اكتر حاجة؟</p>
+
+        <div class="quiz-option" onclick="wrongAnswer()">البيتزا 🍕</div>
+        <div class="quiz-option" onclick="wrongAnswer()">محشي ورق عنب 🍇</div>
+        <div class="quiz-option" onclick="wrongAnswer()">الشيكولاتة 🍫</div>
+        <div class="quiz-option" onclick="correctAnswer(2)">بحب مريومة حبيبتي 💕</div>
+    </div>
+       <!-- 3. صفحة الكويز الثاني -->
+    <div class="container hidden" id="quizPage2">
+        <h1>Quick Quiz for hamody</h1>
+        <p>جاوب صح عشان تعرف تعدي</p>
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.3); margin: 15px 0;">
+        <p style="font-weight: bold; color: #f3c6ff;">السؤال الثاني</p>
+        <p style="font-size: 17px; margin-bottom: 20px;">ايه هو ناديك المفضل اللي بتشجعه؟</p>
+
+        <div class="quiz-option" onclick="wrongAnswer()">الأهلي 🦅</div>
+        <div class="quiz-option" onclick="wrongAnswer()">الزمالك الملكي 🐎</div>
+        <div class="quiz-option" onclick="wrongAnswer()">ريال مدريد 👑</div>
+        <div class="quiz-option" onclick="correctAnswer(3)">مبحبش قد مريومة ❤️</div>
+    </div>
+
+    <!-- 4. صفحة نجاح الكويز -->
+    <div class="container hidden" id="quizSuccessPage">
+        <div style="font-size: 45px; margin-bottom: 10px;">🎉</div>
+        <h1 style="font-size: 22px; margin-bottom: 20px;">عديت الكويز بنجاح جدع! 😍</h1>
+        <button class="next-btn" onclick="goToMainContent()">❤️ اضغط للهابي مسدج</button>
+    </div>
+
+    <!-- 5. الصفحة الأولى (الهابي مسدج والأغنية والزرار) -->
     <div class="container hidden" id="mainContent">
-        <h1>أن شاء الله نملاه فيديوهات كتير لينا وذكريات كتير ونبطل نتخانق ونفضل مع بعض بقا 🥹♥️😂</h1>
+        <h1>hamody حبيبي 💍💜</h1>
         
+        <div class="caption" style="text-align: right; line-height: 1.8;">
+            ❤️ "30/11/2025"<br>
+            two years since our fatiha 🥹.. day<br>
+            - ممتنه جداً انك ف حياتي ..<br>
+            كل حاجه حلوه جت معاك ف اليوم دا 🤲🏻<br>
+            ربنا يديمك نعمه ف حياتي ويجمعني بيك علي خير واشوفك اسعد الناس ف الدنيا يارب ❤️<br>
+            ربنا يجعل اللي جاي كله خير ان شاء الله ❤️<br>
+            🫂.🖤 love u habibi 💖✨
+        </div>
+
         <div class="youtube-card">
             <div class="youtube-top">
                 <div class="vinyl-disc"></div>
                 <div class="song-title-area">
-                    <h4>Song that reminds me of you 🎶</h4>
+                    <h4>اسمع الأغنية دي عشانك 🎶</h4>
                     <p>بحب الاغنيه دي اوي عشان بفتكرك بيها ♥️</p>
                 </div>
             </div>
@@ -278,6 +403,16 @@
             </div>
         </div>
 
+        <button class="next-btn" onclick="goToVideosPage()">اضغط هنا بقا عشان تقلب للصفحه الي بعدها وتشوفي فيديوهاتنا يعم 😂♥️</button>
+    </div>
+
+    <!-- 6. الصفحة الثانية (الرسالة بخط كبير + الفيديوهات والعداد) -->
+    <div class="container hidden" id="videosPage">
+        <h1>hamody حبيبي 💍💜</h1>
+
+        <p style="font-weight: bold; font-size: 16px; margin: 15px 0;">— من مريومتك 💕</p>
+
+        <!-- الهابي مسدج بخط كبير وواضح فوق الفيديوهات -->
         <div class="typing-box" id="typeText"></div>
 
         <div class="caption">🫂 بدايتنا سوا 💖</div>
@@ -287,11 +422,10 @@
             <div class="time-card"><span id="minutes">0</span><label>دقيقة</label></div>
             <div class="time-card"><span id="seconds">0</span><label>ثانية</label></div>
         </div>
-        <p style="font-size: 13px; color: #ffb3c1;">عشان تعرف أن حبيبتك مبرمجة قد الدنيا عملت ويب سايت لينا ولذكرايتنا 😂 🙈 ❤️</p>
+        <p style="font-size: 13px; color: #f3c6ff;">عشان تعرف أن حبيبتك مبرمجة قد الدنيا عملت ويب سايت لينا ولذكرايتنا 😂 🙈 ❤️</p>
 
-        <div class="caption">Special Videos 🎬♥️</div>
+        <div class="caption">صور وفيديو ✨🎥</div>
         
-        <!-- تم تعديل الروابط هنا لتستخدم بروتوكول آمن وforced loading -->
         <div class="video-card">
             <video controls preload="metadata" crossorigin="anonymous"><source src="https://files.catbox.moe/ide2mq.mp4" type="video/mp4"></video>
             <p>أول لحظة وثقناها سوا اول ما عرفنا بعض يولا اول خروجه واول مره شوفنا بعض فيها 🥹♥️♥️🫂</p>
@@ -327,7 +461,16 @@
             <p>ربنا يديمك في حياتي يا أجمل حاجة حصلتلي 🥹🫂</p>
         </div>
 
-        <p style="margin-top: 20px;">عشان انت حبيبي حبيبي خمسة حبيبي يولا يا حمودي 🥹😂♥️</p>
+        <p style="margin-top: 20px;">ربنا يخلينا لبعض وميحرمنيش منك أبداً 🌸</p>
+    </div>
+
+    <!-- نافذة الخطأ الغضبان (Popup) -->
+    <div class="modal-overlay hidden" id="errorModal">
+        <div class="modal-box">
+            <div style="font-size: 45px;">😡</div>
+            <h3>لا والله 🙄😡</h3>
+            <button class="modal-btn" onclick="closeModal()">حاول تاني</button>
+        </div>
     </div>
 
     <script>
@@ -368,17 +511,7 @@
         function checkPass() {
             if(enteredPass === correctPass) {
                 document.getElementById('lockScreen').classList.add('hidden');
-                document.getElementById('mainContent').classList.remove('hidden');
-                
-                document.getElementById('youtubePlayer').src = "https://www.youtube.com/embed/2a4t3hqWngw?autoplay=1&loop=1&playlist=2a4t3hqWngw";
-
-                // إجبار المتصفح على تحميل وتشغيل الفيديوهات فوراً وحل مشكلة الـ CORS
-                document.querySelectorAll('video').forEach(video => {
-                    video.load();
-                });
-
-                startTimer();
-                typeWriter();
+                document.getElementById('quizPage1').classList.remove('hidden');
             } else {
                 document.getElementById('errorMsg').classList.remove('hidden');
                 setTimeout(() => {
@@ -388,14 +521,52 @@
             }
         }
 
+        function wrongAnswer() {
+            document.getElementById('errorModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('errorModal').classList.add('hidden');
+        }
+
+        function correctAnswer(step) {
+            if (step === 2) {
+                document.getElementById('quizPage1').classList.add('hidden');
+                document.getElementById('quizPage2').classList.remove('hidden');
+            } else if (step === 3) {
+                document.getElementById('quizPage2').classList.add('hidden');
+                document.getElementById('quizSuccessPage').classList.remove('hidden');
+            }
+        }
+
+        function goToMainContent() {
+            document.getElementById('quizSuccessPage').classList.add('hidden');
+            document.getElementById('mainContent').classList.remove('hidden');
+            
+            // تشغيل الأغنية المطلوبة بصيغة Embed
+            document.getElementById('youtubePlayer').src = "https://www.youtube.com/embed/moDLu5C7odY?autoplay=1&loop=1&playlist=moDLu5C7odY";
+        }
+
+        function goToVideosPage() {
+            document.getElementById('mainContent').classList.add('hidden');
+            document.getElementById('videosPage').classList.remove('hidden');
+
+            document.querySelectorAll('video').forEach(video => {
+                video.load();
+            });
+
+            startTimer();
+            typeWriter();
+        }
+
         const startDate = new Date("2025-10-03T00:00:00");
-        const messageText = "حبيت أعمل هدية جديدة وعايزين نملأه فيديوهاتنا وذكرياتنا بقى.. بس قبل أي حاجة عايز تعرف إني بحبك وربنا يخليك ليا يا قلبي ويلا بقى انبهر! 😂♥️✨";
+        const messageText = "ان شاء الله نملأه فيديوهات كتير لينا وذكريات كتير ونبطل نتخانق ونفضل مع بعض طول العمر يولا ي حمودي ي حبيبي 🥹😂❤️";
         let i = 0;
         function typeWriter() {
             if (i < messageText.length) {
                 document.getElementById("typeText").innerHTML += messageText.charAt(i);
                 i++;
-                setTimeout(typeWriter, 55);
+                setTimeout(typeWriter, 50);
             }
         }
 
@@ -426,4 +597,4 @@
         }, 250);
     </script>
 </body>
-</html>
+</html> 
