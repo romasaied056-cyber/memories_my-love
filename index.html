@@ -98,10 +98,10 @@
         }
         .key:hover { background: rgba(255, 77, 109, 0.4); transform: scale(1.05); }
 
-        /* 🎵 مشغل الأغنية الأولى كارد مستقل تماماً */
-        .vinyl-player {
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 182, 193, 0.3);
+        /* 🎵 تصميم اليوتيوب والاسطوانة (زي الفيديو تماماً) */
+        .youtube-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 182, 193, 0.4);
             border-radius: 20px;
             padding: 15px;
             margin: 20px 0;
@@ -109,54 +109,67 @@
             flex-direction: column;
             gap: 12px;
             align-items: center;
+            position: relative;
+            overflow: hidden;
         }
-        .vinyl-content {
+        .youtube-top {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             width: 100%;
         }
         .vinyl-disc {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             background: #111;
             border-radius: 50%;
             border: 3px solid #ff4d6d;
             position: relative;
-            animation: spin 4s linear infinite;
+            animation: spin 3s linear infinite;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             flex-shrink: 0;
         }
         .vinyl-disc::after {
             content: '';
             position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 14px;
-            height: 14px;
+            top: 17px;
+            left: 17px;
+            width: 13px;
+            height: 13px;
             background: #ffb3c1;
             border-radius: 50%;
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
-        .song-info { text-align: right; flex-grow: 1; }
-        .song-info h4 { font-size: 14px; color: #ffb3c1; margin-bottom: 5px; }
-        .song-info p { font-size: 12px; color: #ddd; margin: 0; }
         
-        .song-btn {
-            width: 100%;
-            padding: 10px;
-            background: linear-gradient(45deg, #ff4d6d, #c9184a);
-            border: none;
-            color: white;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 15px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            box-shadow: 0 4px 12px rgba(255, 77, 109, 0.4);
+        .song-title-area {
+            text-align: right;
+            flex-grow: 1;
         }
-        .song-btn:hover { background: linear-gradient(45deg, #ff758f, #ff4d6d); }
+        .song-title-area h4 {
+            font-size: 14px;
+            color: #ffb3c1;
+            margin-bottom: 4px;
+        }
+        .song-title-area p {
+            font-size: 12px;
+            color: #eee;
+            margin: 0;
+        }
+
+        .video-frame-box {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: #000;
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+        .video-frame-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         /* ✉️ مربع الرسالة التلقائية */
         .typing-box {
@@ -238,9 +251,6 @@
 </head>
 <body>
 
-    <!-- 🎵 الأغنية الأساسية في الخلفية (يوتيوب) -->
-    <iframe id="bgMusic" width="0" height="0" src="https://www.youtube.com/embed/D8Va9XdrFog?autoplay=1&loop=1&playlist=D8Va9XdrFog" allow="autoplay" style="display:none;"></iframe>
-
     <!-- 🔐 شاشة القفل بـ Keypad تفاعلية -->
     <div class="container" id="lockScreen">
         <h1>🔒 Enter a passcode</h1>
@@ -280,23 +290,26 @@
     <div class="container hidden" id="mainContent">
         <h1>أن شاء الله نملاه فيديوهات كتير لينا وذكريات كتير ونبطل نتخانق ونفضل مع بعض بقا 🥹♥️😂</h1>
         
-        <!-- 🎵 الأغنية الأولى (يوتيوب مع الأسطوانة والزرار المباشر) -->
-        <div class="vinyl-player">
-            <div class="vinyl-content">
+        <!-- 🎵 أغنية اليوتيوب المدمجة مع الاسطوانة وفيديو مشغل يوتيوب -->
+        <div class="youtube-card">
+            <div class="youtube-top">
                 <div class="vinyl-disc"></div>
-                <div class="song-info">
+                <div class="song-title-area">
                     <h4>Song that reminds me of you 🎶</h4>
                     <p>بحب الاغنيه دي اوي عشان بفتكرك بيها ♥️</p>
                 </div>
             </div>
-            <a href="https://music.youtube.com/watch?v=tih-7aPyjyc&si=xCtM7R3iGNko93Xq" target="_blank" class="song-btn">🎵 اسمع الأغنية دي من هنا ✨</a>
+            <div class="video-frame-box">
+                <!-- الـ iframe دا محطوط جواه رابط الأغنية الجديدة مع تفعيل التشغيل التلقائي فور فتح الباسورد -->
+                <iframe id="youtubePlayer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
         </div>
 
         <!-- ✉️ الرسالة التلقائية -->
         <div class="typing-box" id="typeText"></div>
 
         <!-- ⏰ العداد -->
-        <div class="caption">🫂 بدايتنا سوا </div>
+        <div class="caption">🫂 بدايتنا سوا 💖</div>
         <div class="timer-grid">
             <div class="time-card"><span id="days">0</span><label>يوم</label></div>
             <div class="time-card"><span id="hours">0</span><label>ساعة</label></div>
@@ -386,6 +399,9 @@
                 document.getElementById('lockScreen').classList.add('hidden');
                 document.getElementById('mainContent').classList.remove('hidden');
                 
+                // تشغيل أغنية يوتيوب تلقائياً في الإطار أول ما يفتح الهدية
+                document.getElementById('youtubePlayer').src = "https://www.youtube.com/embed/2a4t3hqWngw?autoplay=1&loop=1&playlist=2a4t3hqWngw";
+
                 startTimer();
                 typeWriter();
             } else {
@@ -435,4 +451,4 @@
         }, 250);
     </script>
 </body>
-</html>
+    </html>
