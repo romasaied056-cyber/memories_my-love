@@ -12,7 +12,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            /* خلفية نبيتي متدرجة وفخمة زي الصور تماماً */
             background: linear-gradient(180deg, #500612, #80091d, #30020a);
             min-height: 100vh;
             display: flex;
@@ -24,7 +23,6 @@
             padding: 20px 0;
         }
         .container {
-            /* كروت شبه شفافة بإطار متوهج أنيق */
             background: rgba(255, 255, 255, 0.12);
             padding: 25px 18px;
             border-radius: 25px;
@@ -50,37 +48,108 @@
             line-height: 1.5;
             border: 1px solid rgba(255, 182, 193, 0.3);
         }
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ff4d6d;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 16px;
-            outline: none;
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #500612;
-            font-weight: bold;
-        }
-        button, .next-btn, .song-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(45deg, #ff4d6d, #c9184a);
-            border: none;
-            color: white;
-            font-size: 17px;
-            font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
-            margin-top: 10px;
-            display: inline-block;
-            text-decoration: none;
-        }
-        button:hover, .next-btn:hover { background: linear-gradient(45deg, #ff758f, #ff4d6d); }
         .hidden { display: none; }
+
+        /* 🔐 لوحة مفاتيح الباسورد (Keypad) */
+        .passcode-container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .pass-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #ff4d6d;
+            background: transparent;
+            transition: 0.3s;
+        }
+        .dot.active {
+            background: #ff4d6d;
+            box-shadow: 0 0 10px #ff4d6d;
+        }
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        .key {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .key:hover { background: rgba(255, 77, 109, 0.4); transform: scale(1.05); }
+
+        /* 🎵 تصميم الأسطوانة الكلاسيكية للأغنية الأولى */
+        .vinyl-player {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            border-radius: 20px;
+            padding: 12px;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .vinyl-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+        .vinyl-disc {
+            width: 65px;
+            height: 65px;
+            background: #111;
+            border-radius: 50%;
+            border: 3px solid #ff4d6d;
+            position: relative;
+            animation: spin 4s linear infinite;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+        .vinyl-disc::after {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            width: 15px;
+            height: 15px;
+            background: #ffb3c1;
+            border-radius: 50%;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .song-info { text-align: right; flex-grow: 1; }
+        .song-info h4 { font-size: 14px; color: #ffb3c1; margin-bottom: 5px; }
+        .song-info p { font-size: 12px; color: #ddd; margin: 0; }
         
+        .vinyl-player video {
+            width: 100%;
+            max-height: 200px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: #000;
+        }
+
         /* ✉️ مربع الرسالة التلقائية */
         .typing-box {
             background: rgba(0, 0, 0, 0.25);
@@ -96,7 +165,7 @@
             line-height: 1.7;
         }
 
-        /* ⏰ عداد الوقت بنفس شكل الصورة بالظبط */
+        /* ⏰ عداد الوقت */
         .timer-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -120,7 +189,7 @@
             color: #fff0f3;
         }
 
-        /* 🎬 تصميم الفيديوهات في كروت مستقلة منفصلة */
+        /* 🎬 تصميم الفيديوهات */
         .video-card {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -144,24 +213,7 @@
             margin-bottom: 0;
         }
 
-        /* 📸 الصور والأسكرينات */
-        .media-box {
-            margin-bottom: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .media-box img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            object-fit: contain;
-            image-rendering: -webkit-optimize-contrast;
-            display: block;
-        }
-
-        /* القلوب المتساقطة الوردية والحمراء */
+        /* القلوب المتساقطة */
         .heart {
             position: fixed;
             color: #ff4d6d;
@@ -178,39 +230,80 @@
 </head>
 <body>
 
-    <!-- 🎵 الأغنية اللي بتشتغل في الخلفية أول ما تفتحي -->
+    <!-- 🎵 الأغنية الأساسية الجديدة (تشتغل تلقائي أول ما يفتح من رابط الكاتبوكس) -->
     <audio id="bgMusic" loop preload="auto">
-        <source src="https://files.catbox.moe/92ee1b.mp4" type="audio/mp4">
+        <source src="https://files.catbox.moe/k3v72x.mp4" type="audio/mp4">
     </audio>
 
-    <!-- 🔐 شاشة القفل -->
+    <!-- 🔐 شاشة القفل بـ Keypad تفاعلية -->
     <div class="container" id="lockScreen">
-        <h1>💖 مكان حمودي ومريوم 🗝️</h1>
-        <p>يولا يا حمودي.. خمن كلمة السر إيه؟ 🥹😂<br>ده تاريخ مميز.. ده أنا عملاه باسورد الفون بتاعي سهلتها عليك أهو! ♥️</p>
-        <input type="password" id="passInput" placeholder="اكتب الباسورد هنا 💌">
-        <button onclick="checkPass()">افتح الهدية ✨</button>
-        <p id="errorMsg" style="color: #ff758f; margin-top: 10px; font-size: 14px;" class="hidden">غلط يولا! ركز ده باسورد الفون بتاعي ا 😂🥹♥️</p>
+        <h1>🔒 Enter a passcode</h1>
+        <p>اكتب الباسورد (تاريخنا المميز 8 أرقام) 🥹♥️</p>
+        
+        <div class="passcode-container">
+            <div class="pass-dots">
+                <div class="dot" id="d1"></div>
+                <div class="dot" id="d2"></div>
+                <div class="dot" id="d3"></div>
+                <div class="dot" id="d4"></div>
+                <div class="dot" id="d5"></div>
+                <div class="dot" id="d6"></div>
+                <div class="dot" id="d7"></div>
+                <div class="dot" id="d8"></div>
+            </div>
+            
+            <div class="keypad">
+                <div class="key" onclick="pressKey('1')">1</div>
+                <div class="key" onclick="pressKey('2')">2</div>
+                <div class="key" onclick="pressKey('3')">3</div>
+                <div class="key" onclick="pressKey('4')">4</div>
+                <div class="key" onclick="pressKey('5')">5</div>
+                <div class="key" onclick="pressKey('6')">6</div>
+                <div class="key" onclick="pressKey('7')">7</div>
+                <div class="key" onclick="pressKey('8')">8</div>
+                <div class="key" onclick="pressKey('9')">9</div>
+                <div class="key" onclick="clearPass()" style="font-size: 14px;">C</div>
+                <div class="key" onclick="pressKey('0')">0</div>
+                <div class="key" onclick="backspace()" style="font-size: 14px;">⌫</div>
+            </div>
+        </div>
+        <p id="errorMsg" style="color: #ff758f; margin-top: 15px; font-size: 14px;" class="hidden"> الباسورد خطأ يعم ما تركز شويه الاه😂♥️</p>
     </div>
 
     <!-- 🌟 المحتوى بعد فتح الهدية -->
     <div class="container hidden" id="mainContent">
         <h1>✨ حكايتنا يا حمودي وبحبك قد الدنيا ✨</h1>
         
-        <!-- ✉️ الرسالة التي تكتب نفسها تلقائياً -->
+        <!-- 🎵 الأغنية الأولى بصيغة فيديو وأسطوانة -->
+        <div class="vinyl-player">
+            <div class="vinyl-content">
+                <div class="vinyl-disc"></div>
+                <div class="song-info">
+                    <h4>Song that reminds me of you 🎶</h4>
+                    <p> بحب الاغنيه دي اوي عشان بفتكرك بيها  ♥️</p>
+                </div>
+            </div>
+            <!-- فيديو الأغنية الأولى -->
+            <video controls playsinline preload="metadata">
+                <source src="https://files.catbox.moe/92ee1b.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- ✉️ الرسالة التلقائية -->
         <div class="typing-box" id="typeText"></div>
 
-        <!-- ⏰ عداد الأيام والساعات زي الصور بالضبط -->
-        <div class="caption">💕 بدايتنا وسوا من زمان 💕</div>
+        <!-- ⏰ العداد -->
+        <div class="caption"> 🫂بدايتنا سوا 💕</div>
         <div class="timer-grid">
             <div class="time-card"><span id="days">0</span><label>يوم</label></div>
             <div class="time-card"><span id="hours">0</span><label>ساعة</label></div>
             <div class="time-card"><span id="minutes">0</span><label>دقيقة</label></div>
             <div class="time-card"><span id="seconds">0</span><label>ثانية</label></div>
         </div>
-        <p style="font-size: 13px; color: #ffb3c1;">كل ثانية بتعدي وإنت في قلبي ❤️</p>
+        <p style="font-size: 13px; color: #ffb3c1;">عشان تعرف أن حبيبتك مبرمجة قد الدنيا عملت ويب سايت لينا ولذكرايتنا 😂 🙈 ❤️</p>
 
-        <!-- 🎬 قسم الفيديوهات (كل فيديو لوحده ومعه الجملة بتاعته) -->
-        <div class="caption">Special Video 🎬♥️</div>
+        <!-- 🎬 قسم الفيديوهات فقط -->
+        <div class="caption">Special Videos 🎬♥️</div>
         
         <div class="video-card">
             <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/ide2mq.mp4" type="video/mp4"></video>
@@ -219,7 +312,7 @@
 
         <div class="video-card">
             <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/hccx3d.mp4" type="video/mp4"></video>
-            <p>ضحكنا وهزارنا اللي مبيخلصش يا حمودي 😂♥️</p>
+            <p>ضحكنا وهزارنا اللي مبيخلصش  😂♥️</p>
         </div>
 
         <div class="video-card">
@@ -229,17 +322,17 @@
 
         <div class="video-card">
             <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/92ee1b.mp4" type="video/mp4"></video>
-            <p>الفيديو ده بيحسسني بأحلى أيام بينا 🥹💖</p>
+            <p> بحبك موووووووووت يولا ي حمودي ي حبيبي 🥹💖</p>
         </div>
 
         <div class="video-card">
             <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/j34vlk.mp4" type="video/mp4"></video>
-            <p>لما بننسى العالم كله وبنكون سوا وبس 🙈♥️</p>
+            <p>يارب نفضل سوا ل اخر العمر 🫂 🙈♥️</p>
         </div>
 
         <div class="video-card">
             <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/ttnhke.mp4" type="video/mp4"></video>
-            <p>ذكريات خطفت قلبي ومش هتنساها أبداً ✨</p>
+            <p>ايام متتنسيش 😂✨</p>
         </div>
 
         <div class="video-card">
@@ -247,59 +340,49 @@
             <p>ربنا يديمك في حياتي يا أجمل حاجة حصلتلي 🥹❤️</p>
         </div>
 
-        <!-- 📸 قسم الصور الشخصية -->
-        <div class="caption">أقرب صور لقلبي 🥹♥️</div>
-        <div class="media-box">
-            <img src="https://i.ibb.co/v43FYGpk/image.jpg" alt="ذكرياتنا">
-            <img src="https://i.ibb.co/3Hg326G/image.jpg" alt="ذكرياتنا">
-            <img src="https://i.ibb.co/nMWP0m5N/image.jpg" alt="ذكرياتنا">
-            <img src="https://i.ibb.co/TqTPgrH6/image.jpg" alt="ذكرياتنا">
-            <img src="https://i.ibb.co/qFpxMDRJ/image.jpg" alt="ذكرياتنا">
-            <img src="https://i.ibb.co/7xs3Gt1D/image.jpg" alt="ذكرياتنا">
-        </div>
-
-        <!-- 💬 قسم الإسكرينات HD -->
-        <div class="caption">أقرب كلام اتقال بينا لقلبي 🥹♥️</div>
-        <div class="media-box">
-            <img src="https://i.ibb.co/Hf3Wb665/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/JFHcMNc3/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/x88jqF4b/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/5XtdgRPS/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/wZCjs7kf/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/fG1d0xbt/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/JRkyXD5P/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/fVs79XrJ/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/Mk7gymDT/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/TBWnhBdR/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/cSGtXnZy/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/Hpf1zdWC/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/hx76BGdp/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-            <img src="https://i.ibb.co/v4Qk5SKB/Screenshot-com-whatsapp.jpg" alt="محادثتنا">
-        </div>
-
-        <p>عشان انت حبيبي حبيبي خمسة حبيبي يولا يا حمودي 🥹😂♥️</p>
-
-        <!-- 🎵 زرار تشغيل الأغنية المباشر من يوتيوب -->
-        <a href="https://music.youtube.com/watch?v=D8Va9XdrFog&si=2cJrGJZ_vDn-dI8y" target="_blank" class="song-btn">💖 memories 🔄</a>
+        <p style="margin-top: 20px;">عشان انت حبيبي حبيبي خمسة حبيبي يولا يا حمودي 🥹😂♥️</p>
     </div>
 
     <script>
-        // 🔑 كلمة السر
         const correctPass = "30112025";
+        let enteredPass = "";
 
-        // 📅 تاريخ بداية التعارف
-        const startDate = new Date("2025-10-03T00:00:00");
+        function pressKey(num) {
+            if (enteredPass.length < 8) {
+                enteredPass += num;
+                updateDots();
+            }
+            if (enteredPass.length === 8) {
+                setTimeout(checkPass, 300);
+            }
+        }
 
-        // ✍️ النص اللي هيكتب نفسه تلقائياً أول ما تفتحي
-        const messageText = "حبيت أعمل هدية جديدة وعايزين نملأه صورنا بقى.. بس قبل أي حاجة عايز تعرف إني بحبك وربنا يخليك ليا يا قلبي ويلا بقى انبهر! 😂♥️✨";
+        function backspace() {
+            enteredPass = enteredPass.slice(0, -1);
+            updateDots();
+        }
+
+        function clearPass() {
+            enteredPass = "";
+            updateDots();
+        }
+
+        function updateDots() {
+            for (let i = 1; i <= 8; i++) {
+                const dot = document.getElementById('d' + i);
+                if (i <= enteredPass.length) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            }
+        }
 
         function checkPass() {
-            const input = document.getElementById('passInput').value;
-            if(input === correctPass) {
+            if(enteredPass === correctPass) {
                 document.getElementById('lockScreen').classList.add('hidden');
                 document.getElementById('mainContent').classList.remove('hidden');
                 
-                // تشغيل الأغنية والعداد والرسالة
                 const audio = document.getElementById('bgMusic');
                 audio.play().catch(()=>{});
                 
@@ -307,10 +390,15 @@
                 typeWriter();
             } else {
                 document.getElementById('errorMsg').classList.remove('hidden');
+                setTimeout(() => {
+                    clearPass();
+                    document.getElementById('errorMsg').classList.add('hidden');
+                }, 1200);
             }
         }
 
-        // ✍️ تأثير كتابة الرسالة تلقائياً
+        const startDate = new Date("2025-10-03T00:00:00");
+        const messageText = "حبيت أعمل هدية جديدة وعايزين نملأه فيديوهاتنا وذكرياتنا بقى.. بس قبل أي حاجة عايز تعرف إني بحبك وربنا يخليك ليا يا قلبي ويلا بقى انبهر! 😂♥️✨";
         let i = 0;
         function typeWriter() {
             if (i < messageText.length) {
@@ -320,12 +408,10 @@
             }
         }
 
-        // ⏰ حساب الوقت
         function startTimer() {
             setInterval(() => {
                 const now = new Date();
                 const diff = now - startDate;
-
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
                 const minutes = Math.floor((diff / 1000 / 60) % 60);
@@ -338,7 +424,6 @@
             }, 1000);
         }
 
-        // 🎈 القلوب المتساقطة
         setInterval(() => {
             const heart = document.createElement('div');
             heart.classList.add('heart');
@@ -350,4 +435,4 @@
         }, 250);
     </script>
 </body>
-    </html>
+                </html>
