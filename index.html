@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حمودي ومريوم ✨</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #5a3d5c;
+            overflow-x: hidden;
+            padding: 20px 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.88);
+            padding: 25px 18px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 420px;
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 10;
+        }
+        h1 { font-size: 22px; margin-bottom: 15px; color: #d63384; }
+        p { font-size: 16px; margin-bottom: 15px; line-height: 1.6; }
+        .caption {
+            font-size: 15px;
+            color: #d63384;
+            font-weight: bold;
+            background: #fff0f3;
+            padding: 10px;
+            border-radius: 12px;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ffb6c1;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 16px;
+            outline: none;
+            margin-bottom: 15px;
+        }
+        button, .song-btn {
+            width: 100%;
+            padding: 12px;
+            background: #ff6b81;
+            border: none;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        button:hover, .song-btn:hover { background: #ff4757; }
+        .hidden { display: none; }
+        
+        /* تنسيق الفيديو والصور والإسكرينات */
+        .media-box {
+            margin-bottom: 15px;
+        }
+        .media-box video, .media-box img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 12px;
+            object-fit: cover;
+        }
+        .media-box video {
+            max-height: 350px;
+        }
+        .media-box img {
+            height: auto;
+            max-height: 450px;
+        }
+
+        .heart {
+            position: fixed;
+            color: #ff4757;
+            font-size: 20px;
+            animation: float 4s linear infinite;
+            z-index: 1;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+        .counter {
+            font-size: 17px;
+            font-weight: bold;
+            color: #d63384;
+            background: #ffe6e8;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شاشة القفل -->
+    <div class="container" id="lockScreen">
+        <h1>🔐 مكان حمودي ومريوم وبس 🗝️</h1>
+        <p>يولا يا حمودي.. خمن كلمة السر إيه؟ 🥹😂<br>ده تاريخ مميز.. ده أنا عملاه باسورد الفون بتاعي سهلتها عليك أهو يعم! ♥️</p>
+        <input type="password" id="passInput" placeholder="اكتب الباسورد هنا يا حمودي 💌">
+        <button onclick="checkPass()">افتح يا حمودي 💖</button>
+        <p id="errorMsg" style="color: #e74c3c; margin-top: 10px; font-size: 14px;" class="hidden"> غلط يولا! ركز ده باسورد الفون بتاعي ا 😂🥹♥️</p>
+    </div>
+
+    <!-- المحتوى بعد فتح الموقع -->
+    <div class="container hidden" id="mainContent">
+        <h1>✨ حكايتنا يا حمودي وبحبك قد الدنيا وقد البحر وسمكاته ✨</h1>
+        
+        <div class="counter">
+            حمودي حبيب مريوم 💖<br>
+            <span style="font-size: 15px; color: #ff4757;">من كتر حبي فيك عملت ويب سايت لينا ولذكرايتنا 😂😂♥️</span>
+        </div>
+
+        <!-- 🎬 قسم الفيديوهات -->
+        <div class="caption">فيديوهاتنا يعم 😂♥️</div>
+        <div class="media-box">
+            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/ide2mq.mp4" type="video/mp4"></video>
+            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/hccx3d.mp4" type="video/mp4"></video>
+            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/im3pjh.mp4" type="video/mp4"></video>
+            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/92ee1b.mp4" type="video/mp4"></video>
+            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/j34vlk.mp4" type="video/mp4"></video>
+            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/ttnhke.mp4" type="video/mp4"></video>
+            <video controls playsinline preload="metadata"><source src="https://files.catbox.moe/xf2j5n.mp4" type="video/mp4"></video>
+        </div>
+
+        <!-- 📸 قسم الصور الشخصية -->
+        <div class="caption">اقرب صور لقلبي 🥹♥️</div>
+        <div class="media-box">
+            <img src="https://i.ibb.co/v43FYGpk/image.jpg" alt="ذكرياتنا">
+            <img src="https://i.ibb.co/3Hg326G/image.jpg" alt="ذكرياتنا">
+            <img src="https://i.ibb.co/nMWP0m5N/image.jpg" alt="ذكرياتنا">
+            <img src="https://i.ibb.co/TqTPgrH6/image.jpg" alt="ذكرياتنا">
+            <img src="https://i.ibb.co/qFpxMDRJ/image.jpg" alt="ذكرياتنا">
+            <img src="https://i.ibb.co/7xs3Gt1D/image.jpg" alt="ذكرياتنا">
+        </div>
+
+        <!-- 💬 قسم الإسكرينات والدردشة -->
+        <div class="caption">
+            اقرب كلام اتقال بينا لقلبي وكلام بحبه منك واتمني اسمعه منك علطول ويفضل الحب الي بينا يكبر ويزيد كل يوم عن اليوم الي قبله وميقلش ابدا وحشتني اوي يمحمد ووحشني انك ترجع معايا ذي الأول 🥹♥️
+        </div>
+        <div class="media-box">
+            <img src="https://i.ibb.co/5XtdgRPS/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/x88jqF4b/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/wZCjs7kf/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/fG1d0xbt/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/JRkyXD5P/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/fVs79XrJ/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/Mk7gymDT/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/TBWnhBdR/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/cSGtXnZy/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/Hpf1zdWC/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/hx76BGdp/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/v4Qk5SKB/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/Hf3Wb665/image.jpg" alt="محادثتنا">
+            <img src="https://i.ibb.co/JFHcMNc3/image.jpg" alt="محادثتنا">
+        </div>
+
+        <p>عشان انت حبيبي حبيبي خمسة حبيبي يولا يا حمودي 🥹😂♥️<br>دي الأغنية اللي بتفكرني بيك وبحبها أوي! 🎵</p>
+
+        <!-- 🎵 زرار الأغنية المباشر من يوتيوب -->
+        <a href="https://music.youtube.com/watch?v=D8Va9XdrFog&si=2cJrGJZ_vDn-dI8y" target="_blank" class="song-btn">🎵 اسمع أغنيتنا على يوتيوب 🎬</a>
+    </div>
+
+    <script>
+        // 🔑 كلمة السر
+        const correctPass = "30112025";
+
+        function checkPass() {
+            const input = document.getElementById('passInput').value;
+            if(input === correctPass) {
+                document.getElementById('lockScreen').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+            } else {
+                document.getElementById('errorMsg').classList.remove('hidden');
+            }
+        }
+
+        // القلوب الطائرة
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }, 300);
+    </script>
+</body>
+              </html>
